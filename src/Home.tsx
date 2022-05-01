@@ -18,6 +18,7 @@ import {
   mintOneToken,
   CANDY_MACHINE_PROGRAM,
 } from "./candy-machine";
+import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
 
 const cluster = process.env.REACT_APP_SOLANA_NETWORK!.toString();
 const decimals = process.env.REACT_APP_SPL_TOKEN_TO_MINT_DECIMALS
@@ -47,6 +48,12 @@ const BorderLinearProgress = styled(LinearProgress)`
       rgba(255, 255, 255, 0.5)
     );
   }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Card = styled(Paper)`
@@ -704,16 +711,34 @@ const Home = (props: HomeProps) => {
                       isSoldOut={isSoldOut}
                       onMint={onMint}
                     />
+                    <CrossmintPayButton
+                      style={{ marginTop: "1rem" }}
+                      collectionTitle="The Space Society"
+                      collectionDescription="2222 Explorers suiting up to explore the great unknown of the Solana Ecosystem. Toy production with rev-share models, planetary explorations and the hunt for greater knowledge. Will you suit up?"
+                      collectionPhoto="https://i.imgur.com/Zs8krYk.png"
+                      clientId="7e2da74a-42f6-420b-8b6d-0a0229b43442"
+                      mintConfig={{ type: "candy-machine" }}
+                    />
                   </GatewayProvider>
                 ) : (
-                  <MintButton
-                    candyMachine={candyMachine}
-                    isMinting={isMinting}
-                    isActive={isActive}
-                    isEnded={isEnded}
-                    isSoldOut={isSoldOut}
-                    onMint={onMint}
-                  />
+                  <ButtonContainer>
+                    <MintButton
+                      candyMachine={candyMachine}
+                      isMinting={isMinting}
+                      isActive={isActive}
+                      isEnded={isEnded}
+                      isSoldOut={isSoldOut}
+                      onMint={onMint}
+                    />
+                    <CrossmintPayButton
+                      style={{ marginTop: "1rem" }}
+                      collectionTitle="The Space Society"
+                      collectionDescription="2222 Explorers suiting up to explore the great unknown of the Solana Ecosystem. Toy production with rev-share models, planetary explorations and the hunt for greater knowledge. Will you suit up?"
+                      collectionPhoto="https://i.imgur.com/Zs8krYk.png"
+                      clientId="7e2da74a-42f6-420b-8b6d-0a0229b43442"
+                      mintConfig={{ type: "candy-machine" }}
+                    />
+                  </ButtonContainer>
                 )
               ) : (
                 <h1>Mint is private.</h1>
