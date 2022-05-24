@@ -181,7 +181,7 @@ const Navbar = styled.div`
   justify-content: center;
 `;
 
-const Price = styled(Chip)`
+const Price = styled.div`
   position: absolute;
   margin: 5px;
   font-weight: bold;
@@ -614,13 +614,7 @@ const Home = (props: HomeProps) => {
             <h2>EXPLORING, DISCOVERING, AND EXPANDING THE SOLANA ECOSYSTEM</h2>
 
             <div>
-              <Price
-                label={
-                  isActive && whitelistEnabled && whitelistTokenBalance > 0
-                    ? whitelistPrice + " " + priceLabel
-                    : price + " " + priceLabel
-                }
-              />
+              <div>1 ◎ WL / 1.5 ◎ Public</div>
               <Image src="space-society.gif" alt="NFT To Mint" />
             </div>
 
