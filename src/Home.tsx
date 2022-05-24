@@ -614,7 +614,7 @@ const Home = (props: HomeProps) => {
             <h2>EXPLORING, DISCOVERING, AND EXPANDING THE SOLANA ECOSYSTEM</h2>
 
             <div>
-              <div>1 ◎ WL / 1.5 ◎ Public</div>
+              <div>1 ◎ WL / 1.25 ◎ Public</div>
               <Image src="space-society.gif" alt="NFT To Mint" />
             </div>
 
