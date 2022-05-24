@@ -751,6 +751,17 @@ const Home = (props: HomeProps) => {
               </SolExplorerLink>
             )}
 
+            {!wallet && <ButtonContainer>
+              <CrossmintPayButton
+                style={{ marginTop: "1rem" }}
+                collectionTitle="The Space Society"
+                collectionDescription="2222 Explorers suiting up to explore the great unknown of the Solana Ecosystem. Toy production with rev-share models, planetary explorations and the hunt for greater knowledge. Will you suit up?"
+                collectionPhoto="https://i.imgur.com/Zs8krYk.png"
+                clientId="7e2da74a-42f6-420b-8b6d-0a0229b43442"
+                mintConfig={{ type: "candy-machine" }}
+              />
+            </ButtonContainer>}
+
             <p>
               2222 Explorers awaiting command to launch into the great unknown.
             </p>
